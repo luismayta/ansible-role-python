@@ -1,0 +1,7 @@
+#!/bin/bash
+# Include this file into your ~/.bashrc
+# -------------------------------------
+export PYENV_ROOT="{{ python_pyenv_path }}"
+export PATH="$PYENV_ROOT/bin:$PATH"
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+eval "$(pyenv init -)"
