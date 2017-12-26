@@ -28,7 +28,7 @@ Install
 
 Install it with the following command:
 
-.. code:: bash
+.. code-block:: bash
 
     $ ansible-galaxy install hadenlabs.python
 
@@ -37,7 +37,7 @@ Role Variables
 
 The default role variables in ``defaults/main.yml`` are:
 
-.. code:: yaml
+.. code-block:: yaml
 
         python_pyenv_path: "{{ ansible_env.HOME }}/pyenv"
         python_pyenv_owner: "{{ ansible_env.USER }}"
@@ -45,6 +45,14 @@ The default role variables in ``defaults/main.yml`` are:
         python_pyenv_delete_virtualenvs: [{ venv_name: "latest" }]
         python_pyenv_virtualenvs: [{ venv_name: "latest", py_version: "3.6.0" }]
         python_pyenv_update_git_install: no
+
+- Deploy code
+
+.. code-block:: yaml
+
+    - role: hadenlabs.python
+      python_pyenv_install: no
+      python_pyenv_update_git_install: no
 
 Dependencies
 ============
