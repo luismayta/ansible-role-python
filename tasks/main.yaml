@@ -1,0 +1,25 @@
+---
+
+- include: include_vars.yml
+
+- include: load.yaml
+
+- include: apps.yaml
+
+- include: dependences.yaml
+
+- include: files.yaml
+
+- include: host.yaml
+
+- include: pip.yaml
+
+- include: install.yaml
+
+- include: configure.yaml
+
+- include: environment.yaml
+
+- include: delete_virtualenvs.yaml
+
+- include: post_install.yaml

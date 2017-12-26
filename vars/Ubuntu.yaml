@@ -1,0 +1,52 @@
+---
+# vars file for python (Ubuntu specific)
+
+_python_home_user: "/home/{{ python_pyenv_owner }}"
+
+_python_pyenv_repo: https://github.com/yyuu/pyenv.git
+_python_pyenv_virtualenv_repo: https://github.com/yyuu/pyenv-virtualenv.git
+
+_python_path_file_environmentrc: "{{ _python_home_user }}/.environmentrc"
+_python_path_file_pyenvrunrc: "{{ _python_home_user }}/.pyenvrunrc"
+
+_python:
+  templates:
+    - src: ".pyenvrc.j2"
+      dest: "{{ python_pyenv_path }}/.pyenvrc"
+      owner: "{{ python_pyenv_owner }}"
+      group: "{{ python_pyenv_owner }}"
+      mode: "0644"
+    - src: ".environmentrc.j2"
+      dest: "{{ _python_path_file_environmentrc }}"
+      owner: "{{ python_pyenv_owner }}"
+      group: "{{ python_pyenv_owner }}"
+      mode: "0644"
+    - src: ".pyenvrunrc.j2"
+      dest: "{{ _python_path_file_pyenvrunrc }}"
+      owner: "{{ python_pyenv_owner }}"
+      group: "{{ python_pyenv_owner }}"
+      mode: "0644"
+
+_python_package_dependencies:
+  - git
+  - build-essential
+  - libssl-dev
+  - libbz2-dev
+  - libreadline-dev
+  - libsqlite3-dev
+  - wget
+  - curl
+  - llvm
+  - python-dev
+  - libtiff5-dev
+  - libjpeg8-dev
+  - zlib1g-dev
+  - libfreetype6-dev
+  - liblcms2-dev
+  - libwebp-dev
+  - tcl8.5-dev
+  - tk8.5-dev
+  - python-tk
+  - libpq-dev
+  - libxml2-dev
+  - libxslt1-dev

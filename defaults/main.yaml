@@ -1,0 +1,15 @@
+---
+# defaults file for python
+python_pyenv_path: "{{ ansible_env.HOME }}/pyenv"
+python_pyenv_owner: "{{ ansible_env.USER }}"
+python_pyenv_update_git_install: true
+python_pyenv_install: yes
+python_pyenv_python_versions:
+  - 3.6.0
+python_pyenv_delete_virtualenvs:
+  - venv_name: "latest"
+python_pyenv_virtualenvs:
+  - { venv_name: "latest", py_version: "3.6.0" }
+
+python_pyenv_virtualenvs_default: "latest"
+python_pyenv_file_requeriments: "requirements.txt"
