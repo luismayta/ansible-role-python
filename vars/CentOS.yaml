@@ -1,0 +1,27 @@
+---
+# vars file for python (CentOS specific)
+
+_python_home_user: "/home/{{ python_pyenv_owner }}"
+
+_python_pyenv_repo: https://github.com/yyuu/pyenv.git
+_python_pyenv_virtualenv_repo: https://github.com/yyuu/pyenv-virtualenv.git
+
+_python_path_file_pyenvrunrc: "{{ _python_home_user }}/.pyenvrunrc"
+
+_python:
+  templates:
+    - src: ".pyenvrc.j2"
+      dest: "{{ python_pyenv_path }}/.pyenvrc"
+      owner: "{{ python_pyenv_owner }}"
+      group: "{{ python_pyenv_owner }}"
+      mode: "0644"
+    - src: ".environmentrc.j2"
+      dest: "{{ _python_path_file_environmentrc }}"
+      owner: "{{ python_pyenv_owner }}"
+      group: "{{ python_pyenv_owner }}"
+      mode: "0644"
+    - src: ".pyenvrunrc.j2"
+      dest: "{{ _python_path_file_pyenvrunrc }}"
+      owner: "{{ python_pyenv_owner }}"
+      group: "{{ python_pyenv_owner }}"
+      mode: "0644"
