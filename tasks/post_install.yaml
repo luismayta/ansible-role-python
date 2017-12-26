@@ -9,6 +9,7 @@
   become_user: "{{python_pyenv_owner}}"
   when:
     - python_pyenv_python_versions is defined
+    - python_pyenv_install
 
 - name: Create virtual environments
   register: make_virtualenv
@@ -19,6 +20,7 @@
   become_user: "{{python_pyenv_owner}}"
   when:
     - python_pyenv_virtualenvs is defined
+    - python_pyenv_install
 
 - name: Install package requeriments virtualenv
   become: true
