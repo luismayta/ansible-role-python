@@ -1,4 +1,4 @@
-version = '0.0.0'
+version = '0.1.0'
 
 [[files."CHANGELOG.rst"]]
 search = """
@@ -17,9 +17,9 @@ replace = """
 
 [[files."CHANGELOG.rst"]]
 search = """
-.. _`Unreleased`: https://github.com/hadenlabs/ansible-role-postgresql/compare/{{old_version}}...HEAD
+.. _`Unreleased`: https://github.com/hadenlabs/ansible-role-python/compare/{{old_version}}...HEAD
 """
 replace = """
-.. _`Unreleased`: https://github.com/hadenlabs/ansible-role-postgresql/compare/{{new_version}}...HEAD
-.. _{{new_version}}: https://github.com/hadenlabs/ansible-role-postgresql/compare/{{old_version}}...{{new_version}}
+.. _`Unreleased`: https://github.com/hadenlabs/ansible-role-python/compare/{{new_version}}...HEAD
+.. _{{new_version}}: https://github.com/hadenlabs/ansible-role-python/compare/{{old_version}}...{{new_version}}
 """
