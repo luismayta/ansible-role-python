@@ -8,7 +8,7 @@ END :=""
 .PHONY: help build up requirements clean lint test help
 .DEFAULT_GOAL := help
 
-PROJECT := ansible-roles-postgresql
+PROJECT := ansible-roles-python
 PROJECT_DEV := $(PROJECT)_dev
 PROJECT_STAGE := $(PROJECT)_stage
 PROJECT_TEST := $(PROJECT)_test
