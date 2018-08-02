@@ -11,4 +11,4 @@ COPY ./requirements.txt /usr/src/requirements.txt
 # set working directory to /usr/src/
 WORKDIR /usr/src/
 
-RUN pip install -r /usr/src/requirements.txt
+RUN pip install -r /usr/src/requirements/dev.txt
