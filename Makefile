@@ -11,7 +11,7 @@ OS := $(shell uname)
 PROJECT := ansible-role-python
 PROJECT_PORT := 8000
 
-PYTHON_VERSION=3.6.1
+PYTHON_VERSION=3.6.4
 PYENV_NAME="${PROJECT}"
 
 # Configuration.
