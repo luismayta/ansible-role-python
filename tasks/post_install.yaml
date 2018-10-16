@@ -2,7 +2,7 @@
 
 - name: Install Python interpreters "{{ python_pyenv_python_versions }}"
   register: install_python
-  shell: . {{ python_pyenv_path }}/.pyenvrc && CONFIGURE_OPTS=--enable-shared pyenv install --skip-existing {{ item }}
+  shell: . {{ python_pyenv_path }}/.pyenvrc && export CONFIGURE_OPTS="--enable-shared" && pyenv install --skip-existing {{ item }}
          creates="{{ python_pyenv_path }}/versions/{{ item }}/bin/python"
   with_items: "{{ python_pyenv_python_versions | default([]) }}"
   become: true
