@@ -12,7 +12,7 @@
          removes="{{ python_pyenv_path }}/versions/{{ item.venv_name }}/bin/python"
   with_items: "{{ python_pyenv_delete_virtualenvs | default({}) }}"
   become: true
-  become_user: "{{python_pyenv_owner}}"
+  become_user: "{{ python_pyenv_owner }}"
   ignore_errors: True
   when:
     - python_pyenv_delete_virtualenvs is defined

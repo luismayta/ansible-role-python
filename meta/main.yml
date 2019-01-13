@@ -4,7 +4,7 @@ galaxy_info:
   author: Luis Mayta
   description: Ansible role to services Python
   company: Hadenlabs
-  version: 0.2.1
+  version: 0.2.2
   license: Mit
   min_ansible_version: 2.0
   platforms:
@@ -70,7 +70,7 @@ galaxy_info:
   #  - quantal
   #  - raring
   #  - saucy
-    - trusty
+      - trusty
   #- name: SLES
   #  versions:
   #  - all
@@ -95,7 +95,7 @@ galaxy_info:
   # Below are all categories currently available. Just as with
   # the platforms above, uncomment those that apply to your role.
   #
-  categories:
+categories:
   #- cloud
   #- cloud:ec2
   #- cloud:gce

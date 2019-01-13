@@ -1,7 +1,7 @@
-ansible==2.3.1.0
+ansible>=2.3.1.0
 bumplus==0.0.8
 bumpversion==0.5.3
-docker-compose==1.17.1
+docker-compose>=1.17.1
 ipdb
 ipython
 ipython-genutils==0.2.0

@@ -2,11 +2,14 @@
 
 - name: Install Python interpreters "{{ python_pyenv_python_versions }}"
   register: install_python
-  shell: . {{ python_pyenv_path }}/.pyenvrc && export CONFIGURE_OPTS="--enable-shared" && pyenv install --skip-existing {{ item }}
+  shell: |
+    . {{ python_pyenv_path }}/.pyenvrc
+    && export CONFIGURE_OPTS=--enable-shared
+    && pyenv install --skip-existing {{ item }}
          creates="{{ python_pyenv_path }}/versions/{{ item }}/bin/python"
   with_items: "{{ python_pyenv_python_versions | default([]) }}"
   become: true
-  become_user: "{{python_pyenv_owner}}"
+  become_user: "{{ python_pyenv_owner }}"
   when:
     - python_pyenv_python_versions is defined
     - python_pyenv_install
@@ -17,15 +20,15 @@
          creates="{{ python_pyenv_path }}/versions/{{ item.venv_name }}/bin/python"
   with_items: "{{ python_pyenv_virtualenvs | default({}) }}"
   become: true
-  become_user: "{{python_pyenv_owner}}"
+  become_user: "{{ python_pyenv_owner }}"
   when:
     - python_pyenv_virtualenvs is defined
     - python_pyenv_install
 
 - name: Install package requeriments virtualenv
   become: true
-  become_user: "{{python_pyenv_owner}}"
-  shell: ". {{ _python_path_file_pyenvrunrc }} && pip install -r {{python_pyenv_file_requeriments}}"
+  become_user: "{{ python_pyenv_owner }}"
+  shell: ". {{ _python_path_file_pyenvrunrc }} && pip install -r {{ python_pyenv_file_requeriments }}"
   when:
     - python_pyenv_file_requeriments is defined
   tags:
