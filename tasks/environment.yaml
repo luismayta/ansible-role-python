@@ -6,7 +6,7 @@
               line="source {{ _python_path_file_environmentrc }}"
               state=present
   become: true
-  become_user: "{{python_pyenv_owner}}"
+  become_user: "{{ python_pyenv_owner }}"
 
 - name: Modify .bashrc
   lineinfile: dest="~/.bashrc"
@@ -14,4 +14,4 @@
               line="source {{ python_pyenv_path }}/.pyenvrc"
               state=present
   become: true
-  become_user: "{{python_pyenv_owner}}"
+  become_user: "{{ python_pyenv_owner }}"
