@@ -1,25 +1,25 @@
 ---
 
 - name: Install Python interpreters "{{ python_pyenv_python_versions }}"
+  become: true
+  become_user: "{{ python_pyenv_owner }}"
   register: install_python
   command: . {{ python_pyenv_path }}/.pyenvrc && export CONFIGURE_OPTS=--enable-shared && pyenv install --skip-existing {{ item }}
   args:
     creates: "{{ python_pyenv_path }}/versions/{{ item }}/bin/python"
   with_items: "{{ python_pyenv_python_versions | default([]) }}"
-  become: true
-  become_user: "{{ python_pyenv_owner }}"
   when:
     - python_pyenv_python_versions is defined
     - python_pyenv_install
 
-- name: Create virtual environments
+- name: Create virtual environments "{{ python_pyenv_virtualenvs }}"
+  become: true
+  become_user: "{{ python_pyenv_owner }}"
   register: make_virtualenv
   command: . {{ python_pyenv_path }}/.pyenvrc && pyenv virtualenv {{ item.py_version }} {{ item.venv_name }}
   args:
     creates: "{{ python_pyenv_path }}/versions/{{ item.venv_name }}/bin/python"
   with_items: "{{ python_pyenv_virtualenvs | default({}) }}"
-  become: true
-  become_user: "{{ python_pyenv_owner }}"
   when:
     - python_pyenv_virtualenvs is defined
     - python_pyenv_install
