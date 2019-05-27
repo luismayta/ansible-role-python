@@ -5,14 +5,14 @@
 version: '3'
 services:
 
-  web:
+  app:
     restart: always
-    image: python:3.6.4
+    image: ansible-role-python
     environment: &environment
       - ENVIRONMENT=local
     build:
       context: .
-      dockerfile: provision/docker/web/Dockerfile
+      dockerfile: provision/docker/app/Dockerfile
     volumes:
       - .:/usr/src
     env_file:

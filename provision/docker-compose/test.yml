@@ -5,12 +5,13 @@
 version: '3'
 services:
 
-  web:
+  app:
     restart: always
+    image: ansible-role-python
     environment: &environment
       - DEBUG=True
     build:
       context: .
-      dockerfile: provision/docker/web/Dockerfile
+      dockerfile: provision/docker/app/Dockerfile
     env_file:
       - .env

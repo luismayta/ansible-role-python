@@ -1,5 +1,4 @@
 ---
-
 galaxy_info:
   author: Luis Mayta
   description: Ansible role to services Python
