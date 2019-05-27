@@ -2,7 +2,7 @@
 galaxy_info:
   author: Luis Mayta
   description: Ansible role to services Python
-  company: Hadenlabs
+  company: Okchaty
   version: 0.2.2
   license: Mit
   min_ansible_version: 2.0

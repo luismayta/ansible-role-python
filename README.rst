@@ -4,9 +4,9 @@ Ansible Role Python
 |Build Status| |Ansible Galaxy| |GitHub issues| |Average time to resolve an issue| |Percentage of issues still open| |GitHub license|
 
 :Version: 0.2.2
-:Web: https://github.com/hadenlabs/ansible-role-python
-:Download: http://github.com/hadenlabs/ansible-role-python
-:Source: http://github.com/hadenlabs/ansible-role-python
+:Web: https://github.com/okchaty/ansible-role-python
+:Download: http://github.com/okchaty/ansible-role-python
+:Source: http://github.com/okchaty/ansible-role-python
 :Keywords: ansible-role-python
 
 .. contents:: Table of Contents:
@@ -30,7 +30,7 @@ Install it with the following command:
 
 .. code-block:: bash
 
-    $ ansible-galaxy install hadenlabs.python
+    $ ansible-galaxy install okchaty.python
 
 Role Variables
 ==============
@@ -50,7 +50,7 @@ The default role variables in ``defaults/main.yml`` are:
 
 .. code-block:: yaml
 
-    - role: hadenlabs.python
+    - role: okchaty.python
       python_pyenv_install: no
       python_pyenv_update_git_install: no
 
@@ -71,7 +71,7 @@ this:
 
         - hosts: servers
           roles:
-            - hadenlabs.python
+            - okchaty.python
 
 To install a specific version:
 
@@ -79,13 +79,13 @@ To install a specific version:
 
       - hosts: servers
         roles:
-          - { role: hadenlabs.python }
+          - { role: okchaty.python }
 
 .. code:: yaml
 
         - hosts: servers
           roles:
-             - role: hadenlabs.python
+             - role: okchaty.python
                python_pyenv_path: "{{ home }}/pyenv"
                python_pyenv_owner: "{{ instance_owner }}"
                python_pyenv_update_git_install: no
@@ -126,16 +126,16 @@ Made with :heart: :coffee: and :pizza: by `author`_ and `company`_.
 
 .. Badges:
 
-.. |Build Status| image:: https://travis-ci.org/hadenlabs/ansible-role-python.svg
-   :target: https://travis-ci.org/hadenlabs/ansible-role-python
-.. |Ansible Galaxy| image:: https://img.shields.io/badge/galaxy-hadenlabs.python-blue.svg
-   :target: https://galaxy.ansible.com/hadenlabs/ansible-role-python/
-.. |GitHub issues| image:: https://img.shields.io/github/issues/hadenlabs/ansible-role-python.svg
-   :target: https://github.com/hadenlabs/ansible-role-python/issues
-.. |Average time to resolve an issue| image:: http://isitmaintained.com/badge/resolution/hadenlabs/ansible-role-python.svg
-   :target: http://isitmaintained.com/project/hadenlabs/ansible-role-python
-.. |Percentage of issues still open| image:: http://isitmaintained.com/badge/open/hadenlabs/ansible-role-python.svg
-   :target: http://isitmaintained.com/project/hadenlabs/ansible-role-python
+.. |Build Status| image:: https://travis-ci.org/okchaty/ansible-role-python.svg
+   :target: https://travis-ci.org/okchaty/ansible-role-python
+.. |Ansible Galaxy| image:: https://img.shields.io/badge/galaxy-okchaty.python-blue.svg
+   :target: https://galaxy.ansible.com/okchaty/ansible-role-python/
+.. |GitHub issues| image:: https://img.shields.io/github/issues/okchaty/ansible-role-python.svg
+   :target: https://github.com/okchaty/ansible-role-python/issues
+.. |Average time to resolve an issue| image:: http://isitmaintained.com/badge/resolution/okchaty/ansible-role-python.svg
+   :target: http://isitmaintained.com/project/okchaty/ansible-role-python
+.. |Percentage of issues still open| image:: http://isitmaintained.com/badge/open/okchaty/ansible-role-python.svg
+   :target: http://isitmaintained.com/project/okchaty/ansible-role-python
 .. |GitHub license| image:: https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square
    :target: LICENSE
 
@@ -144,7 +144,7 @@ Made with :heart: :coffee: and :pizza: by `author`_ and `company`_.
 .. _`contributors`: AUTHORS
 .. _`contributing`: CONTRIBUTING.rst
 
-.. _`company`: https://github.com/hadenlabs
+.. _`company`: https://github.com/okchaty
 .. _`author`: https://github.com/luismayta
 
 .. dependences
