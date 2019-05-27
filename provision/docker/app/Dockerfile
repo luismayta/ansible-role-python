@@ -1,9 +1,9 @@
-FROM python:3.6.4
+FROM python:3.6.5
 
 MAINTAINER Luis Mayta <@slovacus>
 
 LABEL NAME python
-LABEL VERSION 3.6.4
+LABEL VERSION 3.6.5
 
 COPY ./requirements/ /usr/src/requirements/
 COPY ./requirements.txt /usr/src/requirements.txt
