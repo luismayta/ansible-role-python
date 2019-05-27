@@ -1,13 +1,4 @@
 ---
-
-- include: install.d/CentOS.yaml
-  when:
-    - ansible_distribution == "CentOS"
-
-- include: install.d/Ubuntu.yaml
-  when:
-    - ansible_distribution == "Ubuntu"
-
 - name: Install python PyEnv
   git:
     repo: "{{ _python_pyenv_repo }}"
