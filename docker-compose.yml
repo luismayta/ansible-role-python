@@ -7,7 +7,7 @@ services:
 
   web:
     restart: always
-    image: python:3.6.1
+    image: python:3.6.4
     environment: &environment
       - ENVIRONMENT=local
     build:

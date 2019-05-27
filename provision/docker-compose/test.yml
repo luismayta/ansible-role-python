@@ -7,7 +7,6 @@ services:
 
   web:
     restart: always
-    image: python:3.6.1
     environment: &environment
       - DEBUG=True
     build:

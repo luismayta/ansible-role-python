@@ -19,7 +19,7 @@ Requirements:
 
 List of applications:
 
-- `Python 3.6.1`_
+- `Python 3.6.4`_
 - `Docker`_
 - `Docker Compose`_
 
@@ -149,6 +149,6 @@ Made with :heart: :coffee: and :pizza: by `author`_ and `company`_.
 
 .. dependences
 .. _Python: https://www.python.org
-.. _Python 3.6.1: https://www.python.org/downloads/release/python-361
+.. _Python 3.6.4: https://www.python.org/downloads/release/python-364
 .. _Docker: https://www.docker.com/
 .. _Docker Compose: https://docs.docker.com/compose/
