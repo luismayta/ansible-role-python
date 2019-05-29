@@ -1,4 +1,5 @@
 # ~/.tmuxinator/ansible-role-python.yml
+---
 name: ansible-role-python
 root: <%= ENV["PROJECTS"] %>/ansible/roles/ansible-role-python
 # Optional tmux socket

@@ -1,3 +1,4 @@
+---
 user: "root"
 python_pyenv_path: "/home/{{ user }}/pyenv"
 python_pyenv_owner: "{{ user }}"
