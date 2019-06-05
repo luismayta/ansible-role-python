@@ -1,26 +1,37 @@
 ---
 language: python
-python: 3.6.5
+dist: xenial
+services: docker
+python:
+  - "3.5"
+  - "3.6"
+  - "3.7"
 
-# Use the new container infrastructure
-sudo: false
-
-# Install ansible
-addons:
-  apt:
-    packages:
-    - python-pip
+env:
+  global:
+    - ROLE_NAME: python
+  matrix:
+    - TOX_ENV: ansible26-xenial
+    - TOX_ENV: ansible26-bionic
+    - TOX_ENV: ansible27-xenial
+    - TOX_ENV: ansible27-bionic
+    - TOX_ENV: ansible28-xenial
+    - TOX_ENV: ansible28-bionic
 
 install:
-  # Install dependences
+  # Install test dependencies.
   - make setup
-  # Check ansible version
-  - ansible --version
-  # Create ansible.cfg with correct roles_path
-  - printf '[defaults]\nroles_path=../' >ansible.cfg
+  - pip install -r requirements/test.txt
+
+before_script:
+  # Use actual Ansible Galaxy role name for the project directory.
+  - cd ../
+  - mv ansible-role-$ROLE_NAME okchaty.$ROLE_NAME
+  - cd okchaty.$ROLE_NAME
+
 
 script:
-  - make test.lint
+  - tox -e $TOX_ENV
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
