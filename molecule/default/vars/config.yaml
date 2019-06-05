@@ -8,5 +8,3 @@ python_pyenv_delete_virtualenvs:
   - venv_name: "latest"
 python_pyenv_virtualenvs:
   - { venv_name: "latest", py_version: "3.6.5" }
-python_environment_dict:
-  VAR1: "VALUE1"
