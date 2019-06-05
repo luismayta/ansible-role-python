@@ -1,6 +1,6 @@
 ---
 
-- name: Copy templates Python
+- name: Copy templates pyenvrc
   template:
     src: "{{ item.src }}"
     dest: "{{ item.dest }}"
@@ -9,3 +9,22 @@
     mode: "{{ item.mode }}"
   with_items: "{{ _python.templates | default({}) }}"
   when: _python.templates is defined
+
+- name: Copy templates environmentrc
+  template:
+    src: ".environmentrc.j2"
+    dest: "{{ _python_path_file_environmentrc }}"
+    owner: "{{ python_pyenv_owner }}"
+    group: "{{ python_pyenv_owner }}"
+    mode: "0644"
+  when: python_environment_dict is defined
+
+- name: Copy templates pyenvrunrc
+  template:
+    src: ".pyenvrunrc.j2"
+    dest: "{{ _python_path_file_pyenvrunrc }}"
+    owner: "{{ python_pyenv_owner }}"
+    group: "{{ python_pyenv_owner }}"
+    mode: "0644"
+  when:
+    - python_pyenv_virtualenvs_default is defined
