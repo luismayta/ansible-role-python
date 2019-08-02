@@ -1,14 +1,39 @@
-FROM python:3.6.5
+FROM python:3.7.3
 
 MAINTAINER Luis Mayta <@slovacus>
 
-LABEL NAME python
-LABEL VERSION 3.6.5
+ARG stage
 
-COPY ./requirements/ /usr/src/requirements/
-COPY ./requirements.txt /usr/src/requirements.txt
+LABEL NAME ansible-role-python-app-$stage
+LABEL VERSION $version
+
+ENV PACKAGES bash \
+        git \
+  gcc \
+  libc-dev \
+  make \
+  musl-dev \
+  openssl \
+  gcc \
+  libgdal20 \
+  libev-dev
+
+
+COPY Pipfile Pipfile.lock /usr/src/
 
 # set working directory to /usr/src/
 WORKDIR /usr/src/
 
-RUN pip install -r /usr/src/requirements/dev.txt
+RUN  groupadd -g 500 -r python \
+  && groupadd developer \
+  && useradd -m -g developer -G python developer \
+  && chown -R developer:python /usr/local/bin \
+  && mkdir -p /usr/src \
+  && chown -R developer /usr/src \
+  && apt-get update -y \
+  && apt-get install -y $PACKAGES \
+  && pip3 install pipenv \
+  && pipenv install --dev \
+  && pipenv shell --fancy \
+  && apt-get purge \
+  && rm -rf /var/lib/apt/lists/*

@@ -1,21 +1,24 @@
-FROM python:3.6.4
+FROM python:3.7.3
 
 MAINTAINER Luis Mayta <@slovacus>
 
-LABEL NAME check
-LABEL VERSION 1.0.1
+ARG stage
+ARG version
+LABEL NAME ansible-role-python-check-$stage
 
-COPY ./requirements/ /usr/src/requirements/
-COPY ./requirements.txt /usr/src/requirements.txt
+COPY Pipfile Pipfile.lock /usr/src/
 
 # set working directory to /usr/src/
 WORKDIR /usr/src/
 
 RUN apt-get update -y \
-    && apt-get -y install --no-install-recommends \
-    # tools validation
-    shellcheck \
-    # install python dependencies
-    && pip install -r /usr/src/requirements/setup.txt \
-    && apt-get purge \
-    && rm -rf /var/lib/apt/lists/*
+  && apt-get -y install --no-install-recommends \
+  # tools validation
+  git-core \
+  shellcheck \
+  # install python dependencies
+  && pip3 install pipenv \
+  && pipenv install --dev \
+  && apt-get purge \
+  && apt-get autoremove -y \
+  && rm -rf /var/lib/apt/lists/*
