@@ -1,12 +1,12 @@
 Ansible Role Python
-###################
+===================
 
-|Build Status| |Ansible Galaxy| |GitHub issues| |Average time to resolve an issue| |Percentage of issues still open| |GitHub license|
+|Build Status| |Ansible Galaxy| |GitHub issues| |Percentage of issues still open| |GitHub license|
 
 :Version: 0.2.2
-:Web: https://github.com/okchaty/ansible-role-python
-:Download: http://github.com/okchaty/ansible-role-python
-:Source: http://github.com/okchaty/ansible-role-python
+:Web: https://github.com/equipindustry/ansible-role-python
+:Download: http://github.com/equipindustry/ansible-role-python
+:Source: http://github.com/equipindustry/ansible-role-python
 :Keywords: ansible-role-python
 
 .. contents:: Table of Contents:
@@ -15,7 +15,7 @@ Ansible Role Python
 Ansible Galaxy role for `Python`_.
 
 Requirements:
-=============
+-------------
 
 List of applications:
 
@@ -24,16 +24,16 @@ List of applications:
 - `Docker Compose`_
 
 Install
-=======
+-------
 
 Install it with the following command:
 
 .. code-block:: bash
 
-    $ ansible-galaxy install okchaty.python
+    $ ansible-galaxy install equipindustry.python
 
 Role Variables
-==============
+--------------
 
 The default role variables in ``defaults/main.yml`` are:
 
@@ -50,17 +50,17 @@ The default role variables in ``defaults/main.yml`` are:
 
 .. code-block:: yaml
 
-    - role: okchaty.python
+    - role: equipindustry.python
       python_pyenv_install: no
       python_pyenv_update_git_install: no
 
 Dependencies
-============
+------------
 
 None
 
 Example Playbook
-================
+----------------
 
 See the `examples <./examples/>`__ directory.
 
@@ -71,7 +71,7 @@ this:
 
         - hosts: servers
           roles:
-            - okchaty.python
+            - equipindustry.python
 
 To install a specific version:
 
@@ -79,13 +79,13 @@ To install a specific version:
 
       - hosts: servers
         roles:
-          - { role: okchaty.python }
+          - { role: equipindustry.python }
 
 .. code:: yaml
 
         - hosts: servers
           roles:
-             - role: okchaty.python
+             - role: equipindustry.python
                python_pyenv_path: "{{ home }}/pyenv"
                python_pyenv_owner: "{{ instance_owner }}"
                python_pyenv_update_git_install: no
@@ -101,23 +101,26 @@ To install a specific version:
                    py_version: "2.7.9"
 
 License
-=======
+-------
 
-MIT
+The code in this repository is licensed under the Apache unless
+otherwise noted.
+
+Please see LICENSE_ for details.
 
 Changelog
-=========
+---------
 
 Please see `CHANGELOG`_ for more information what
 has changed recently.
 
 Contributing
-============
+------------
 
 Please see `CONTRIBUTING`_ for details.
 
 Credits
-=======
+-------
 
 -  `author`_
 -  `contributors`_
@@ -126,16 +129,14 @@ Made with :heart: :coffee: and :pizza: by `author`_ and `company`_.
 
 .. Badges:
 
-.. |Build Status| image:: https://travis-ci.org/okchaty/ansible-role-python.svg
-   :target: https://travis-ci.org/okchaty/ansible-role-python
-.. |Ansible Galaxy| image:: https://img.shields.io/badge/galaxy-okchaty.python-blue.svg
-   :target: https://galaxy.ansible.com/okchaty/ansible-role-python/
-.. |GitHub issues| image:: https://img.shields.io/github/issues/okchaty/ansible-role-python.svg
-   :target: https://github.com/okchaty/ansible-role-python/issues
-.. |Average time to resolve an issue| image:: http://isitmaintained.com/badge/resolution/okchaty/ansible-role-python.svg
-   :target: http://isitmaintained.com/project/okchaty/ansible-role-python
-.. |Percentage of issues still open| image:: http://isitmaintained.com/badge/open/okchaty/ansible-role-python.svg
-   :target: http://isitmaintained.com/project/okchaty/ansible-role-python
+.. |Build Status| image:: https://travis-ci.org/equipindustry/ansible-role-python.svg
+   :target: https://travis-ci.org/equipindustry/ansible-role-python
+.. |Ansible Galaxy| image:: https://img.shields.io/badge/galaxy-equipindustry.python-blue.svg
+   :target: https://galaxy.ansible.com/equipindustry/ansible-role-python/
+.. |GitHub issues| image:: https://img.shields.io/github/issues/equipindustry/ansible-role-python.svg
+   :target: https://github.com/equipindustry/ansible-role-python/issues
+.. |Average time to resolve an issue| image:: http://isitmaintained.com/badge/resolution/equipindustry/ansible-role-python.svg
+   :target: http://isitmaintained.com/project/equipindustry/ansible-role-python
 .. |GitHub license| image:: https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square
    :target: LICENSE
 
@@ -143,8 +144,9 @@ Made with :heart: :coffee: and :pizza: by `author`_ and `company`_.
 .. _`changelog`: CHANGELOG.rst
 .. _`contributors`: AUTHORS
 .. _`contributing`: CONTRIBUTING.rst
+.. _`LICENSE`: LICENSE
 
-.. _`company`: https://github.com/okchaty
+.. _`company`: https://github.com/equipindustry
 .. _`author`: https://github.com/luismayta
 
 .. dependences

@@ -4,31 +4,46 @@
   become: true
   become_user: "{{ python_pyenv_owner }}"
   register: install_python
-  shell: . {{ python_pyenv_path }}/.pyenvrc && export CONFIGURE_OPTS=--enable-shared && pyenv install --skip-existing {{ item }}
+  shell: . {{ python_pyenv_path }}/.pyenvrc \
+    && export CONFIGURE_OPTS=--enable-shared \
+    && pyenv install --skip-existing {{ item }}
   args:
     creates: "{{ python_pyenv_path }}/versions/{{ item }}/bin/python"
   with_items: "{{ python_pyenv_python_versions | default([]) }}"
   when:
     - python_pyenv_python_versions is defined
-    - python_pyenv_install
+    - python_pyenv_install|bool
 
 - name: Create virtual environments "{{ python_pyenv_virtualenvs }}"
   become: true
   become_user: "{{ python_pyenv_owner }}"
   register: make_virtualenv
-  shell: . {{ python_pyenv_path }}/.pyenvrc && pyenv virtualenv {{ item.py_version }} {{ item.venv_name }}
+  shell: . {{ python_pyenv_path }}/.pyenvrc \
+    && pyenv virtualenv {{ item.py_version }} {{ item.venv_name }}
   args:
     creates: "{{ python_pyenv_path }}/versions/{{ item.venv_name }}/bin/python"
   with_items: "{{ python_pyenv_virtualenvs | default({}) }}"
   when:
     - python_pyenv_virtualenvs is defined
-    - python_pyenv_install
+    - python_pyenv_install|bool
+    - not pipenv_is_enabled
 
-- name: Install package requeriments virtualenv
+- name: Install package with pip requeriments virtualenv
   become: true
   become_user: "{{ python_pyenv_owner }}"
   shell: ". {{ _python_path_file_pyenvrunrc }} && pip install -r {{ python_pyenv_file_requeriments }}"
   when:
     - python_pyenv_file_requeriments is defined
+    - pip_is_enabled|bool
+  tags:
+    - deploy
+
+- name: Install package with pipenv requeriments virtualenv
+  become: true
+  become_user: "{{ python_pyenv_owner }}"
+  shell: ". {{ _python_path_file_pyenvrunrc }} && pip install {{ pipenv_tags }}"
+  when:
+    - pipenv_tags is defined
+    - pipenv_is_enabled|bool
   tags:
     - deploy

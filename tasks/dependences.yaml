@@ -9,6 +9,6 @@
   with_items: "{{ _python_package_dependencies | default([]) }}"
   when:
     - _python_package_dependencies is defined
-    - python_pyenv_install | bool
+    - python_pyenv_install|bool
   tags:
     - dependences
