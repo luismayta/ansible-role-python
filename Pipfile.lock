@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "5818148c594917e55ec18d71a270df9d09d9d7ee14781827333ab4a92f82ab37"
+            "sha256": "b61369035a03a2af0b5a199f12d4606d400c95e04c92983e5393c89001b3e33a"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -21,6 +21,7 @@
             "hashes": [
                 "sha256:05f9ed3ca3e06dffaa87a73a8e6f7f322825bc3f609f8b71c4fe22dbbdf72abc"
             ],
+            "index": "pypi",
             "version": "==2.8.3"
         },
         "ansible-lint": {
@@ -231,6 +232,21 @@
                 "sha256:f069f3a01830ca754ba5258fde2278454a0b5b79e0d7f5c13b3b97e57d4acff6"
             ],
             "version": "==4.4.0"
+        },
+        "docker-py": {
+            "hashes": [
+                "sha256:35b506e95861914fa5ad57a6707e3217b4082843b883be246190f57013948aba",
+                "sha256:4c2a75875764d38d67f87bc7d03f7443a3895704efc57962bdf6500b8d4bc415"
+            ],
+            "index": "pypi",
+            "version": "==1.10.6"
+        },
+        "docker-pycreds": {
+            "hashes": [
+                "sha256:6ce3270bcaf404cc4c3e27e4b6c70d3521deae82fb508767870fdbf772d584d4",
+                "sha256:7266112468627868005106ec19cd0d722702d2b7d5912a28e19b826c3d37af49"
+            ],
+            "version": "==0.4.0"
         },
         "entrypoints": {
             "hashes": [
@@ -700,6 +716,13 @@
                 "sha256:f4ebe71925af7b40a864553f761ed559b43544f8f71746c2d756c7fe788ade7c"
             ],
             "version": "==0.1.7"
+        },
+        "websocket-client": {
+            "hashes": [
+                "sha256:1151d5fb3a62dc129164292e1227655e4bbc5dd5340a5165dfae61128ec50aa9",
+                "sha256:1fd5520878b68b84b5748bb30e592b10d0a91529d5383f74f4964e72b297fd3a"
+            ],
+            "version": "==0.56.0"
         },
         "whichcraft": {
             "hashes": [
