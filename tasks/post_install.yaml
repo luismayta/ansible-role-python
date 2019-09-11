@@ -41,7 +41,7 @@
 - name: Install package with pipenv requeriments virtualenv
   become: true
   become_user: "{{ python_pyenv_owner }}"
-  shell: ". {{ _python_path_file_pyenvrunrc }} && pip install {{ pipenv_tags }}"
+  shell: ". {{ _python_path_file_pyenvrunrc }} && pipenv install"
   when:
     - pipenv_tags is defined
     - pipenv_is_enabled|bool
