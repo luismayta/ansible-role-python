@@ -4,6 +4,8 @@ python_pyenv_path: "{{ ansible_env.HOME }}/pyenv"
 python_pyenv_owner: "{{ ansible_env.USER }}"
 python_pyenv_update_git_install: true
 python_pyenv_install: yes
+pip_is_enabled: false
+pipenv_is_enabled: false
 python_pyenv_python_versions:
   - 3.6.5
 python_pyenv_delete_virtualenvs:
