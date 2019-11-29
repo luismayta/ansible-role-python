@@ -1,7 +1,7 @@
 ---
 # defaults file for python
-python_pyenv_path: "{{ ansible_env.HOME }}/pyenv"
-python_pyenv_owner: "{{ ansible_env.USER }}"
+python_pyenv_path: '{{ ansible_env.HOME }}/pyenv'
+python_pyenv_owner: '{{ ansible_env.USER }}'
 python_pyenv_update_git_install: true
 python_pyenv_install: yes
 pip_is_enabled: false
@@ -9,11 +9,11 @@ pipenv_is_enabled: false
 python_pyenv_python_versions:
   - 3.6.5
 python_pyenv_delete_virtualenvs:
-  - venv_name: "latest"
+  - venv_name: 'latest'
 # python_pyenv_virtualenvs:
-  # - { venv_name: "latest", py_version: "3.6.5" }
+# - { venv_name: "latest", py_version: "3.6.5" }
 
-python_pyenv_virtualenvs_default: "latest"
+python_pyenv_virtualenvs_default: 'latest'
 # python_pyenv_file_requeriments: "requirements.txt"
 python_environment_dict:
-  VAR1: "VALUE1"
+  VAR1: 'VALUE1'

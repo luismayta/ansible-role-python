@@ -14,7 +14,6 @@ dev:
 build:
   # The steps that will be executed on build
   steps:
-
     - add-ssh-key:
         keyname: GITHUB_KEY
         host: github.com
@@ -39,18 +38,17 @@ build:
     - script:
         name: Show vars env
         code: |
-            env
+          env
 
     - wantedly/pretty-slack-notify:
         webhook_url: $SLACK_WEBHOOK_URL
         channel: $SLACK_CHANNEL
         username: $SLACK_USERNAME
-        passed_message: "yay :smile:"
+        passed_message: 'yay :smile:'
 
 # Testing definition
 test:
   steps:
-
     - add-ssh-key:
         keyname: GITHUB_KEY
         host: github.com
@@ -62,7 +60,7 @@ test:
     - script:
       name: Show vars env
       code: |
-          env
+        env
 
     - script:
         name: install shellcheck
@@ -81,7 +79,7 @@ test:
           make lint
 
     - script:
-        name: "Set environment variables"
+        name: 'Set environment variables'
         code: |
           export MY_VAR=you are happy
 
@@ -97,10 +95,10 @@ test:
     - script:
         name: Show vars env
         code: |
-            env
+          env
 
     - wantedly/pretty-slack-notify:
         webhook_url: $SLACK_WEBHOOK_URL
         channel: $SLACK_CHANNEL
         username: $SLACK_USERNAME
-        passed_message: "yay :smile:"
+        passed_message: 'yay :smile:'

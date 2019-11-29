@@ -1,8 +1,8 @@
 ---
-user: "root"
-python_pyenv_path: "/home/{{ user }}/pyenv"
-python_pyenv_owner: "{{ user }}"
+user: 'root'
+python_pyenv_path: '/home/{{ user }}/pyenv'
+python_pyenv_owner: '{{ user }}'
 python_pyenv_python_versions:
   - 3.6.4
 python_pyenv_delete_virtualenvs:
-  - venv_name: "latest"
+  - venv_name: 'latest'

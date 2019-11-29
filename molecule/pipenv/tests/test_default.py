@@ -17,7 +17,7 @@ def test_hosts_file(host):
     assert_that(exe.group, equal_to("root"))
 
 
-@pytest.mark.parametrize("name", [("python"), ("curl"), ("git"), ("gcc")])
+@pytest.mark.parametrize("name", [("python"), ("curl"), ("git"), ("gcc"),])
 def test_build_dependencies(host, name):
     pkg = host.package(name)
     assert_that(pkg.is_installed, equal_to(True))
