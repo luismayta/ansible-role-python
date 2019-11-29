@@ -21,7 +21,6 @@ List of applications:
 
 - `Pyenv`_
 - `Docker`_
-- `Docker Compose`_
 
 Install
 -------
@@ -149,7 +148,7 @@ Made with :heart: :coffee: and :pizza: by `author`_ and `company`_.
 .. Links
 .. _`changelog`: CHANGELOG.rst
 .. _`contributors`: AUTHORS
-.. _`contributing`: CONTRIBUTING.rst
+.. _`contributing`: docs/source/CONTRIBUTING.rst
 .. _`LICENSE`: LICENSE
 
 .. _`company`: https://github.com/equipindustry
@@ -159,4 +158,3 @@ Made with :heart: :coffee: and :pizza: by `author`_ and `company`_.
 .. _Python: https://www.python.org
 .. _Pyenv: https://github.com/pyenv/pyenv
 .. _Docker: https://www.docker.com/
-.. _Docker Compose: https://docs.docker.com/compose/
